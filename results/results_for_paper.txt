@@ -1,0 +1,5 @@
+Results for table:
+Model, MAE, RMSE, R²
+Linear Regression, 81.5322, 104.6693, 0.0269
+Random Forest, 1.9117, 3.4413, 0.9989
+XGBoost, 1.5622, 4.6912, 0.9980

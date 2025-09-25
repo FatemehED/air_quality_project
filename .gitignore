@@ -1,0 +1,35 @@
+# ========================
+# Python
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# ========================
+# Virtual Environments
+# ========================
+env/
+venv/
+.venv/
+
+# ========================
+# Jupyter
+# ========================
+.ipynb_checkpoints
+
+# ========================
+# Data
+# ========================
+# Ignore only raw data (keep processed for reproducibility)
+data/raw/
+
+# ========================
+# OS / Editor
+# ========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
