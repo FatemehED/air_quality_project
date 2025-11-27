@@ -1,78 +1,96 @@
 # Air Quality Prediction Using Machine Learning Models on IoT Sensor Data
 
-This repository contains the code and experiments for the paper on **Air Quality Index (AQI) prediction using machine learning models**.  
-We preprocess raw AQI data based on the official US-EPA AQI breakpoints and evaluate several models including Linear Regression, Random Forest, and XGBoost.
+This repository contains the code and experiments for the paper **"Air Quality Prediction Using Machine Learning Models on IoT Sensor Data"** (Accepted at ICSPIS 2025).
 
-📂 Project Structure
+The study compares machine learning models for real-time AQI prediction using IoT sensor data from India, with enhanced analysis addressing reviewer comments.
+
+## 📂 Project Structure (Revised)
 air_quality_project/
+├── 01_initial_analysis/ # Original analysis for first submission
+│ ├── 01_data_preprocessing.py
+│ └── 02_modeling.py
+│ └── 02_new_modeling.py # ✅Contains Stacking Ensemble & cross-validation
 ├── data/
-│   ├── processed/
-│   │   └── processed_AQI_US_EPA.csv
-│   └── raw/
-│       └── AQI.csv
-├── figures/
-│   ├── figure2_error_boxplot.png
-│   ├── figure3_residual_plots.png
-│   ├── figure4_actual_vs_predicted.png
-│   ├── figure5_mae_r2_comparison.png
-│   └── figure6_scatter_plots.png
-├── notebooks/
-│   ├── 01_data_preprocessing.py
-│   └── 02_modeling.py
-├── results/
-│   ├── cv_model_summary.csv
-│   ├── model_results.csv
-│   ├── model_summary.csv
-│   └── results_for_paper.txt
+│ ├── processed/
+│ │ └── processed_AQI_US_EPA.csv
+│ └── raw/
+│ └── AQI.csv
+├── figures/ # All generated graphs (Figures 2-6)
+│ ├── figure2_error_boxplot.png
+│ ├── figure3_residual_plots.png
+│ ├── figure4_actual_vs_predicted.png
+│ ├── figure5_mae_r2_comparison.png
+│ └── figure6_scatter_plots.png
+├── results/ # Performance metrics and summaries
+│ ├── cv_model_summary.csv # ✅ 5-fold cross-validation results
+│ ├── model_results.csv
+│ ├── model_summary.csv
+│ └── results_for_paper.txt
+
+
+
+## 🚀 Quick Start (Revised Version)
+
+### 1. Data Preprocessing (First)
+```bash
+python 01_initial_analysis/01_data_preprocessing.py
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+Generates processed dataset at data/processed/processed_AQI_US_EPA.csv
+2. Main Analysis with Enhanced Models
+ash
+python 02_revised_analysis/02_new_modeling.py
+This enhanced script will:
+```
+✅ Train and evaluate 4 models (Linear Regression, Random Forest, XGBoost, Stacking Ensemble)
 
-Notes:
-Put your raw dataset file at data/raw/AQI.csv.
-After running preprocessing, the script will produce data/processed/processed_AQI_US_EPA.csv.
-Figures 2–6 are saved as PNG files in figures/.
-Final CSV / text results are in results/.
+✅ Perform 5-fold cross-validation for robust evaluation
 
-⚙️ Installation
-Clone the repository and install dependencies:
-```bash
-git clone https://github.com/USERNAME/air_quality_project.git
-cd air_quality_project
-pip install -r requirements.txt
+✅ Generate all performance figures (Figures 2-6) in figures/
 
-🚀 Usage
-1.Data Preprocessing
-python notebooks/01_data_preprocessing.py
+✅ Save comprehensive results in results/ including cross-validation metrics
 
-This will generate the preprocessed dataset:
-data/processed/processed_AQI_US_EPA.csv
+📊 Enhanced Models & Evaluation
+Models Compared:
+Linear Regression (Baseline)
 
-2.Modeling & Evaluation
-python notebooks/02_modeling.py
+Random Forest
 
-This will:
-Train and evaluate ML models
-Generate performance figures (Figure 2–6) in figures/
-Save summary tables in results/
+XGBoost
 
-📊 Models & Metrics
-The following models were evaluated:
--Linear Regression
--Random Forest
--XGBoost
--Metrics reported:
--MAE (Mean Absolute Error)
--RMSE (Root Mean Squared Error)
--R² (Coefficient of Determination)
+Stacking Ensemble ✅ New hybrid model
 
-📌 Notes
--Raw datasets are not included in the repository due to size and licensing.
--Make sure to place your raw data in data/raw/ before running preprocessing
+Evaluation Metrics:
+MAE (Mean Absolute Error)
+
+RMSE (Root Mean Squared Error)
+
+R² (Coefficient of Determination)
+
+5-Fold Cross-Validation ✅ Enhanced robustness check
+
+🔬 Key Enhancements in Revised Version
+Stacking Ensemble Model: Hybrid approach combining multiple base models
+
+Comprehensive Cross-Validation: 5-fold CV for reliable performance estimation
+
+Enhanced Error Analysis: Detailed residual plots and error distributions
+
+Comparative Visualization: Updated figures including all four models
+
+📌 Important Notes
+Raw datasets are not included due to size and licensing
+
+Place your raw data in data/raw/AQI.csv before running preprocessing
+
+All file paths are configured for the project structure above
 
 ✍️ Authors
--**Fatemeh Ensafdoust** (First Author)  
-  📧 Email: ensafdoust@gmail.com 
-  🔗 LinkedIn: [Fatemeh's LinkedIn](https://www.linkedin.com/in/fatemeh-ensafdoust-9535622a7/)  
-- **Dr. S. N. TermehMousavi** (Corresponding Author, Supervisor)  
-  📧 Email: s.termehmousavi@iau.ac.ir
+Fatemeh Ensafdoust (First Author)
+📧 Email: ensafdoust@gmail.com
+🔗 LinkedIn: Fatemeh's LinkedIn
+
+Dr. S. N. TermehMousavi (Corresponding Author, Supervisor)
+📧 Email: s.termehmousavi@iau.ac.ir
+
